@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import Es6 from './playground/Es6';
 import Es6_2 from './playground/Es6_2';
+import Visibility_Toggle from './playground/Visibility_Toggle';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <Visibility_Toggle/>
   </React.StrictMode>,
   document.getElementById('root')
 );
