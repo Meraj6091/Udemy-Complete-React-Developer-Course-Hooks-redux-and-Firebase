@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 function Visibility_Toggle() {
-	let [state, setstate] = useState(true);
+	const [state, setstate] = useState(true);
 
 	const Onpress = () => {
 		setstate(!state);
@@ -11,7 +11,8 @@ function Visibility_Toggle() {
 		<div>
 			<h1>Visibility Toggle</h1>
 			<button onClick={Onpress}>{!state ? "Show Text" : "Hide Text"}</button>
-			{state && <p>Hi, I'm Meraj Vindra </p>}
+			{state && <p>Hi, I'm Meraj Vindra </p>}{" "}
+			{/*if its true then show the paragraph*/}
 		</div>
 	);
 }
