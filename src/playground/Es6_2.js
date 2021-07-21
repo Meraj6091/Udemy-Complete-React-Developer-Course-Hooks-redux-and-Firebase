@@ -29,7 +29,7 @@ function Es6_2() {
 		setCount(count + 1);
 		console.log(count);
 	};
-	const [array, Setarray] = useState([1, 2, 3]);
+	//const [array, Setarray] = useState([1, 2, 3]);
 	const [newarray, Setnewarray] = useState([]);
 	const onformsubmit = (e) => {
 		e.preventDefault(); //to stop the refresh
@@ -61,4 +61,37 @@ function Es6_2() {
 	return <div>{render()}</div>;
 }
 
-export default Es6_2;
+class Options extends React.Component {
+	render() {
+		const title = "indician app";
+		const subtitle ="put your life in the hands"
+		return (
+			<div>
+				<Addoption title={title} subtitle={subtitle}/>
+			</div>
+		);
+	}
+}
+class Addoption extends React.Component {
+	render() {
+		return (
+			<div>
+				<button>Addoption</button>
+				<h2>{this.props.title}</h2>
+			</div>
+		);
+	}
+}
+
+class three extends React.Component {
+	render() {
+		return (
+			<div>
+				<Options/>
+			</div>
+		);
+	}
+}
+ 
+
+export default three;

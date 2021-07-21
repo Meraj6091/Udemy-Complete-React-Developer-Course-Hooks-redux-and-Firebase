@@ -1,5 +1,5 @@
 class Person {
-	constructor(name = 0, age = 0) {
+	constructor(name = "kamal", age) {
 		this.name = name;
 		this.age = age;
 	}
@@ -23,10 +23,26 @@ class Student extends Person {
 		return description;
 	}
 }
-const C = new Student("Meraj", 21, "Software Enginner");
-const A = new Person("Meraj", 23);
-const B = new Person();
-console.log(C.getDescription());
+class Traveler extends Student {
+	constructor(name, age, major, homelocation) {
+		super(name, age, major);
+		this.homelocation = homelocation;
+	}
+	haslocation() {
+		return !!this.homelocation;
+	}
+	getgreeting() {
+		let greeting = super.getDescription();
+		if (this.haslocation()) {
+			greeting += `im visiting from ${this.homelocation}`;
+		}
+		return greeting;
+	}
+}
+const C = new Traveler(undefined, 21, "Software Engnieer", "colombo");
+const B = new Traveler("Meraj", 21, "Software Engnieer", "colombo");
+console.log(C.getgreeting());
+console.log(B.getgreeting());
 function Es6_classes() {
 	return <div></div>;
 }
