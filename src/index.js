@@ -8,11 +8,18 @@ import Visibility_Toggle from "./playground/Visibility_Toggle";
 import Es6_classes from "./playground/Es6_classes";
 import Functional from "./playground/Functional";
 import Counter from "./playground/counter_example";
+import DefaultProps from "./playground/DefaultProps";
+import OptionModal from "./Components/OptionModal";
+import IndecisionApp from "./Components/IndecisionApp";
 
 ReactDOM.render(
 	<React.StrictMode>
 		{/* <Counter count={0}/> */}
-		<Es6 />
+		{/* <DefaultProps>
+			<h1>This is Default Props</h1>
+			<p>for learning purpose</p>
+		</DefaultProps> */}
+    <IndecisionApp/>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

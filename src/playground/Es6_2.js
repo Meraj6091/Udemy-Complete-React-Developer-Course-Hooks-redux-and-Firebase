@@ -2,13 +2,13 @@ import React from "react";
 import { useState } from "react";
 function Es6_2() {
 	const user = {
-		// name:'Meraj',
-		// cities:['colombo','matar','jaffna'],
-		// printplacelived: function() {
-		//     this.cities.forEach((city) => {
-		//         console.log(this.name+'has lived in' + city)
-		//     })
-		// }
+		name:'Meraj',
+		cities:['colombo','matar','jaffna'],
+		printplacelived: function() {
+		    this.cities.forEach((city) => {
+		        console.log(this.name+'has lived in' + city)
+		    })
+		}
 	};
 	const muliplayer = {
 		numbers: [1, 2, 3],
@@ -29,7 +29,7 @@ function Es6_2() {
 		setCount(count + 1);
 		console.log(count);
 	};
-	//const [array, Setarray] = useState([1, 2, 3]);
+	const [array, Setarray] = useState([1, 2, 3]);
 	const [newarray, Setnewarray] = useState([]);
 	const onformsubmit = (e) => {
 		e.preventDefault(); //to stop the refresh
