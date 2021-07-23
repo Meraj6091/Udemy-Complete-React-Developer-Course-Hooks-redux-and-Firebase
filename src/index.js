@@ -13,6 +13,8 @@ import OptionModal from "./Components/OptionModal";
 import IndecisionApp from "./Components/IndecisionApp";
 import Test from "./React-Router/components/Test";
 import Portfolio from './React-Router/playground/Portfolio'
+import Store from "./React-Router/playground/Redux";
+import {test} from "./React-Router/playground/Destructuring"
 ReactDOM.render(
 	<React.StrictMode>
 		{/* <Counter count={0}/> */}
@@ -20,7 +22,10 @@ ReactDOM.render(
 			<h1>This is Default Props</h1>
 			<p>for learning purpose</p>
 		</DefaultProps> */}
-		<Portfolio/>
+		{/* <Portfolio/> */}
+		
+		{/* <Store/> */}
+		{test()}
 	</React.StrictMode>,
 	document.getElementById("root")
 );
