@@ -15,6 +15,7 @@ import Test from "./React-Router/components/Test";
 import Portfolio from './React-Router/playground/Portfolio'
 import Store from "./React-Router/playground/Redux";
 import {test} from "./React-Router/playground/Destructuring"
+import Redux2 from "./React-Router/playground/Redux-expensify"
 ReactDOM.render(
 	<React.StrictMode>
 		{/* <Counter count={0}/> */}
@@ -25,7 +26,8 @@ ReactDOM.render(
 		{/* <Portfolio/> */}
 		
 		{/* <Store/> */}
-		{test()}
+		{/* {test()} */}
+		<Redux2/>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

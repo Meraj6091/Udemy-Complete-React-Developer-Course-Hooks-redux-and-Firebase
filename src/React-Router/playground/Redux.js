@@ -3,19 +3,27 @@ import { createStore } from "redux";
 const test = () => {
 	return <div></div>;
 };
-const store = createStore((state = { count: 0 }, action) => {
+const incrementCount = ({ incrementby = 1 } = {}) => ({
+	type: "INCREMENT",
+	incrementby,
+});
+const decrementby = ({ decrementby = 1 } = {}) => ({
+	type: "DECREMENT",
+	decrementby,
+});
+const reset = ({ resetby = 0 } = {}) => ({
+	type: "RESET",
+	resetby,
+});
+const countReducer = (state = { count: 0 }, action) => {
 	switch (action.type) {
 		case "INCREMENT":
-			const incrementby =
-				typeof action.incrementby === "number" ? action.incrementby : 1;
 			return {
-				count: state.count + incrementby,
+				count: state.count + action.incrementby,
 			};
 		case "DECREMENT":
-			const decrementby =
-				typeof action.decrementby === "number" ? action.decrementby : 1;
 			return {
-				count: state.count - decrementby,
+				count: state.count - action.decrementby,
 			};
 		case "RESET":
 			return {
@@ -24,24 +32,13 @@ const store = createStore((state = { count: 0 }, action) => {
 		default:
 			return state;
 	}
-});
+};
+const store = createStore(countReducer);
 store.subscribe(() => console.log(store.getState()));
-store.dispatch({
-	type: "INCREMENT",
-	incrementby: 5,
-});
-store.dispatch({
-	type: "INCREMENT",
-});
-store.dispatch({
-	type: "RESET",
-});
-store.dispatch({
-	type: "DECREMENT",
-});
-store.dispatch({
-	type: "DECREMENT",
-	decrementby: 10,
-});
+store.dispatch(incrementCount({ incrementby: 5 }));
+store.dispatch(incrementCount());
+store.dispatch(reset());
+store.dispatch(decrementby());
+store.dispatch(decrementby({ decrementby: 10 }));
 
 export default test;
